@@ -1,0 +1,29 @@
+openapi: 3.0.2
+info:
+  title: Data Science API service
+  description: N/A
+  version: 0.1.0
+  contact:
+    name: "Github Repo"
+    url: https://github.com/wuhan2020/nCov-2019-data-science
+
+# Let's version the APIs a bit later
+# servers:
+#   - url: /api/v1
+
+tags:
+  - name: Example
+    description: This is just a show case tag
+  - name: Economy
+    description: Economy Data
+
+# Refer to https://swagger.io/docs/specification/using-ref/ for Escape Characters e.g. ~1
+paths:
+  /example/all:
+    $ref: "example.yml#/paths/~1example~1all"
+  /example/{name}:
+    $ref: "example.yml#/paths/~1example~1{name}"
+components:
+  schemas:
+    ExampleItem:
+      $ref: "example.yml#/components/schemas/ExampleItem"

@@ -1,0 +1,98 @@
+paths:
+  /example/all:
+    get:
+      tags:
+        - Example
+      summary: Get all examples
+      operationId: src.api.example.get_examples
+      description: |
+        By passing in the appropriate options, 
+        you can get all of the available examples
+      parameters:
+        - in: query
+          name: skip
+          description: number of records to skip for pagination
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+            default: 0
+        - in: query
+          name: limit
+          description: maximum number of records to return
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+            maximum: 50
+            default: 50
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ExampleItem"
+        "400":
+          $ref: "errors.yml#/components/BadRequest"
+        "500":
+          $ref: "errors.yml#/components/InternalServerError"
+        # Definition of all other error statuses
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "errors.yml#/components/schemas/Error"
+
+  /example/{name}:
+    get:
+      tags:
+        - Example
+      summary: Get example by name
+      operationId: src.api.example.get_example_by_name
+      description: |
+        By passing in the appropriate options, 
+        you can get an example by name
+      parameters:
+        - in: path
+          name: name
+          description: the name of the example you want to query for
+          schema:
+            $ref: "#/components/schemas/ExampleItem/properties/name"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/ExampleItem"
+        "400":
+          $ref: "errors.yml#/components/BadRequest"
+        "500":
+          $ref: "errors.yml#/components/InternalServerError"
+        # Definition of all other error statuses
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "errors.yml#/components/schemas/Error"
+components:
+  schemas:
+    ExampleItem:
+      type: object
+      required:
+        - time
+        - name
+      properties:
+        time:
+          type: string
+          format: date-time
+          example: 2008-08-08T09:00:00.001Z
+        name:
+          type: string
+          example: "Tekkaman"

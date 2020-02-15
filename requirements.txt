@@ -2,3 +2,4 @@ connexion[swagger-ui]==2.6.0
 Flask==1.1.1
 PyYAML>=5.3,<6
 prance==0.18.1
+gunicorn==20.0.4

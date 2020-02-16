@@ -1,0 +1,3 @@
+# The folder is used for storing intermediate files during the process
+*.txt
+*.csv

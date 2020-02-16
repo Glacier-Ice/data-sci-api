@@ -32,13 +32,11 @@ options = {"swagger_path": swagger_ui_3_path, "swagger_url": ""}
 # the actual Flask app
 app = connexion.App(__name__, options=options)
 app.add_api(
-    aggregate_specs(Path(__file__).parent / "swagger/api.yml"),
-    validate_responses=True,
-    resolver=RestyResolver("src.api"),
+    aggregate_specs(Path(__file__).parent / "swagger/api.yml"), validate_responses=True, resolver=RestyResolver("src.api"),
 )
+
+a = f"long line testlong line testlong line testlong line testlong line testlong line testlong line testlong line testlong line testlong line testlong line testlong line testlong line testlong line testlong line testlong line test"
 
 
 if __name__ == "__main__":
-    app.run(
-        host=args.host, port=os.environ.get("FC_SERVER_PORT", args.port), debug=False
-    )
+    app.run(host=args.host, port=os.environ.get("FC_SERVER_PORT", args.port), debug=False)

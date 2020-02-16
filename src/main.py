@@ -6,11 +6,13 @@ from connexion.resolver import RestyResolver
 import prance
 from pathlib import Path
 from typing import Dict, Any
+from src import config
+import logging
 
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--host", default="0.0.0.0")
-parser.add_argument("--port", type=int, default=9000)
+parser.add_argument("--port", type=int, default=8081)
 args, _ = parser.parse_known_args()
 
 
@@ -25,12 +27,25 @@ def aggregate_specs(main_file: Path) -> Dict[str, Any]:
     return parser.specification
 
 
+## STEP-1: Pass in Swagger Options
 # Use OpenAPI Swagger page, and redirct SwaggerUI to root
 options = {"swagger_path": swagger_ui_3_path, "swagger_url": ""}
 
+## STEP-2: Initialize Flask/Connexion App
 # Note this app is a wrapper around FlaskAPP, use app.app to access
 # the actual Flask app
 app = connexion.App(__name__, options=options)
+
+## STEP-3: Load the config file from CONFIG_PATH and feeb it back to the Flask/Connexion
+config_path = os.getenv("CONFIG_PATH") or Path(__file__).parent / "tests/data/example_config.json"
+api_config = config.Config(config_path=config_path, flask_config_values=app.app.config)
+app.app.config = api_config
+
+## STEP-4: Configure the logger
+logger = logging.getLogger(f"api.{__name__}")
+logger.info(f"Using config file at {config_path}")
+
+## STEP-5: Feed in the Swagger Spec
 app.add_api(
     aggregate_specs(Path(__file__).parent / "swagger/api.yml"), validate_responses=True, resolver=RestyResolver("src.api"),
 )

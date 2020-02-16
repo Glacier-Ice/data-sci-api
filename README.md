@@ -42,9 +42,9 @@ from the root directory of the clone of this repo. Note this step could take a l
 
 Run:
 ```
-docker run --name data-sci-api --publish 9000:9000 data-sci-api:default 
+docker run --name data-sci-api --publish 8081:8081 data-sci-api:default 
 ```
-and then open `http://localhost:9000` in your browser. _(Add `-d` to run the Docker container in detach/background mode)_
+and then open `http://localhost:8081` in your browser. _(Add `-d` to run the Docker container in detach/background mode)_
 
 You should see a Swagger page documents the available endpoints now.
 
@@ -72,7 +72,7 @@ and then start the server by:
 ```
 bash start_server
 ```
-now if you open `http://localhost:9000` in your browser, you should see a Swagger page documents the available endpoints.
+now if you open `http://localhost:8081` in your browser, you should see a Swagger page documents the available endpoints.
 
 ## Contributing Guide
 

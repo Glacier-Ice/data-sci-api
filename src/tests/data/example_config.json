@@ -1,0 +1,8 @@
+{
+    "api_url": "localhost",
+    "db_username": "test_db_username",
+    "db_password": "test_db_password",
+    "db_name": "test_db_name",
+    "db_port": "test_db_port",
+    "db_host": "test_db_host"
+}

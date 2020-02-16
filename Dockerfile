@@ -11,8 +11,8 @@ COPY . .
 # Install deps
 RUN pip install -r requirements.txt
 
-# Expose port 9000
-EXPOSE 9000
+# Expose port 8081
+EXPOSE 8081
 
 # Start the server
 ENTRYPOINT [ "bash", "start_server"]

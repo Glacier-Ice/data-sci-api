@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Dict, Any
 from src import config
 import logging
+import json
 
 
 parser = argparse.ArgumentParser()
@@ -36,14 +37,28 @@ options = {"swagger_path": swagger_ui_3_path, "swagger_url": ""}
 # the actual Flask app
 app = connexion.App(__name__, options=options)
 
-## STEP-3: Load the config file from CONFIG_PATH and feeb it back to the Flask/Connexion
-config_path = os.getenv("CONFIG_PATH") or Path(__file__).parent / "tests/data/example_config.json"
-api_config = config.Config(config_path=config_path, flask_config_values=app.app.config)
-app.app.config = api_config
-
-## STEP-4: Configure the logger
+## STEP-3: Configure the logger
 logger = logging.getLogger(f"api.{__name__}")
-logger.info(f"Using config file at {config_path}")
+
+## STEP-4: Load the config file from CONFIG_PATH and feeb it back to the Flask/Connexion
+config_path = os.getenv("CONFIG_PATH")
+
+# Note: this is a hack since Heroku doesn't support JSON config
+if config_path and not Path(config_path).is_file():
+    try:
+        api_config = config.Config.from_string(string=config_path, flask_config_values=app.app.config)
+        logger.info(f"Reading config file from string defined by $CONFIG_PATH.")
+    except (json.decoder.JSONDecodeError, TypeError):
+        logger.warning("Invalid config or config_path provided!")
+else:
+    # Use the backup default config
+    if not config_path:
+        logger.warning("Attempting to use the default config.")
+        config_path = Path(__file__).parent / "tests/data/example_config1.json"
+    logger.info(f"Using config file at {config_path}")
+    api_config = config.Config.from_file(config_path=config_path, flask_config_values=app.app.config)
+
+app.app.config = api_config
 
 ## STEP-5: Feed in the Swagger Spec
 app.add_api(

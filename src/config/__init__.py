@@ -4,10 +4,8 @@ import logging
 
 
 class Config(object):
-    def __init__(self, config_path, flask_config_values=None):
-        with open(Path(config_path)) as fp:
-            self.config = json.load(fp)
-
+    def __init__(self, config_dict, flask_config_values=None):
+        self.config = config_dict
         for k, v in self.config.items():
             setattr(self, k, v)
 
@@ -16,6 +14,17 @@ class Config(object):
                 setattr(self, k, v)
 
         self._verify_fields()
+
+    @classmethod
+    def from_file(cls, config_path, flask_config_values=None):
+        with open(Path(config_path)) as fp:
+            config = json.load(fp)
+        return cls(config_dict=config, flask_config_values=flask_config_values)
+
+    @classmethod
+    def from_string(cls, string, flask_config_values=None):
+        config = json.loads(string)
+        return cls(config_dict=config, flask_config_values=flask_config_values)
 
     @property
     def required_fields(self):

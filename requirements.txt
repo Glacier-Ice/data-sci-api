@@ -4,3 +4,4 @@ PyYAML>=5.3,<6
 prance==0.18.1
 gunicorn==20.0.4
 pandas==1.0.1
+psycopg2-binary==2.8.4

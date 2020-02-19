@@ -62,9 +62,7 @@ app.app.config = api_config
 
 ## STEP-5: Feed in the Swagger Spec
 app.add_api(
-    aggregate_specs(Path(__file__).parent / "swagger/api.yml"),
-    validate_responses=True,
-    resolver=RestyResolver("src.api"),
+    aggregate_specs(Path(__file__).parent / "swagger/api.yml"), validate_responses=True, resolver=RestyResolver("src.api"),
 )
 
 

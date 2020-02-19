@@ -1,0 +1,196 @@
+paths:
+  /epidemic/all:
+    get:
+      tags:
+        - Epidemic
+      summary: Get all available epidemic data
+      operationId: src.api.epidemic.get_all
+      description: |
+        By passing in the appropriate options, 
+        you can get all of the available epidemic data.
+      parameters:
+        - in: query
+          name: granularity
+          description: query by what granularity
+          schema:
+            type: string
+            enum: [city, province]
+          required: true
+        - in: query
+          name: limit
+          description: |
+            when you don't really need ALL of the data, 
+            putting a limit to the query can avoid potential crash
+          schema:
+            type: integer
+            format: int32
+            example: 500
+            default: 0
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - $ref: "#/components/schemas/EpidemicItemByCity"
+                    - $ref: "#/components/schemas/EpidemicItemByProvince"
+        "400":
+          $ref: "errors.yml#/components/BadRequest"
+        "500":
+          $ref: "errors.yml#/components/InternalServerError"
+        # Definition of all other error statuses
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "errors.yml#/components/schemas/Error"
+      security:
+        - api_key: []
+
+  /epidemic/query:
+    post:
+      tags:
+        - Epidemic
+      summary: Get epidemic data by specific criterias
+      operationId: src.api.epidemic.query
+      description: |
+        By passing in the appropriate options, 
+        you can get specific epidemic data of interest
+      parameters:
+        - in: query
+          name: name
+          description: query by name of the city/province
+          schema:
+            type: string
+            example: "武汉"
+          required: true
+        - in: query
+          name: granularity
+          description: query by what granularity
+          schema:
+            type: string
+            enum: [city, province]
+        - in: query
+          name: start
+          description: |
+            Returns only data with an equal or later start datetime. 
+            Can be specified at most once. If both start and end date
+            are specified, start date must be before or equal to end date.
+          schema:
+            type: string
+            format: date-time
+            example: 2008-08-08T09:00:00.001Z
+        - in: query
+          name: end
+          description: |
+            Returns only data with an equal or earlier end datetime. 
+            Can be specified at most once. If both start and end date 
+            are specified, start date must be before or equal to end date.
+          schema:
+            type: string
+            format: date-time
+            example: 2008-08-08T09:00:00.001Z
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                oneOf:
+                  - $ref: "#/components/schemas/EpidemicItemByCity"
+                  - $ref: "#/components/schemas/EpidemicItemByProvince"
+        "400":
+          $ref: "errors.yml#/components/BadRequest"
+        "500":
+          $ref: "errors.yml#/components/InternalServerError"
+        # Definition of all other error statuses
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "errors.yml#/components/schemas/Error"
+      security:
+        - api_key: []
+
+components:
+  schemas:
+    EpidemicItemByCity:
+      type: object
+      required:
+        - id
+        - city_name
+        - city_code
+      properties:
+        id:
+          type: integer
+          format: int32
+          example: 1
+        curday:
+          type: string
+          format: date-time
+          example: 2008-08-08T09:00:00.001Z
+        city_name:
+          type: string
+          example: 长沙
+        city_code:
+          type: string
+          example: 430100
+        confirmed_count:
+          type: integer
+          format: int32
+          example: 10
+        cured_count:
+          type: integer
+          format: int32
+          example: 10
+        dead_count:
+          type: integer
+          format: int32
+          example: 0
+        suspected_count:
+          type: integer
+          format: int32
+          example: 20
+    EpidemicItemByProvince:
+      type: object
+      required:
+        - id
+        - province_name
+        - province_code
+      properties:
+        id:
+          type: integer
+          format: int32
+          example: 1
+        curday:
+          type: string
+          format: date-time
+          example: 2008-08-08T09:00:00.001Z
+        province_name:
+          type: string
+          example: 湖南省
+        province_code:
+          type: string
+          example: 430000
+        confirmed_count:
+          type: integer
+          format: int32
+          example: 10
+        cured_count:
+          type: integer
+          format: int32
+          example: 10
+        dead_count:
+          type: integer
+          format: int32
+          example: 0
+        suspected_count:
+          type: integer
+          format: int32
+          example: 20

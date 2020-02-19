@@ -16,6 +16,8 @@ tags:
     description: This is just a show case tag
   - name: Economy
     description: Economy Data
+  - name: Epidemic
+    description: The epidemic data about the outbreak
 
 # Refer to https://swagger.io/docs/specification/using-ref/ for Escape Characters e.g. ~1
 paths:
@@ -23,10 +25,18 @@ paths:
     $ref: "example.yml#/paths/~1example~1all"
   /example/{name}:
     $ref: "example.yml#/paths/~1example~1{name}"
+  /epidemic/all:
+    $ref: "epidemic.yml#/paths/~1epidemic~1all"
+  /epidemic/query:
+    $ref: "epidemic.yml#/paths/~1epidemic~1query"
 components:
   schemas:
     ExampleItem:
       $ref: "example.yml#/components/schemas/ExampleItem"
+    EpidemicItemByProvince:
+      $ref: "epidemic.yml#/components/schemas/EpidemicItemByProvince"
+    EpidemicItemByCity:
+      $ref: "epidemic.yml#/components/schemas/EpidemicItemByCity"
 
   securitySchemes:
     api_key:

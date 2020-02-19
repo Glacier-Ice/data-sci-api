@@ -48,6 +48,7 @@ if config_path and not Path(config_path).is_file():
     try:
         api_config = config.Config.from_string(string=config_path, flask_config_values=app.app.config)
         logger.info(f"Reading config file from string defined by $CONFIG_PATH.")
+        logger.debug(f"Config looks like: {api_config}")
     except (json.decoder.JSONDecodeError, TypeError):
         logger.warning("Invalid config or config_path provided!")
 else:

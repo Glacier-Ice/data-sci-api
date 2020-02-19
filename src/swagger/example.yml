@@ -81,6 +81,9 @@ paths:
             application/json:
               schema:
                 $ref: "errors.yml#/components/schemas/Error"
+      security:
+        - api_key: []
+
 components:
   schemas:
     ExampleItem:

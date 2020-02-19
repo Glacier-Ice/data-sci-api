@@ -54,7 +54,7 @@ else:
     # Use the backup default config
     if not config_path:
         logger.warning("Attempting to use the default config.")
-        config_path = Path(__file__).parent / "tests/data/example_config1.json"
+        config_path = Path(__file__).parent / "tests/data/example_config.json"
     logger.info(f"Using config file at {config_path}")
     api_config = config.Config.from_file(config_path=config_path, flask_config_values=app.app.config)
 
@@ -62,7 +62,9 @@ app.app.config = api_config
 
 ## STEP-5: Feed in the Swagger Spec
 app.add_api(
-    aggregate_specs(Path(__file__).parent / "swagger/api.yml"), validate_responses=True, resolver=RestyResolver("src.api"),
+    aggregate_specs(Path(__file__).parent / "swagger/api.yml"),
+    validate_responses=True,
+    resolver=RestyResolver("src.api"),
 )
 
 

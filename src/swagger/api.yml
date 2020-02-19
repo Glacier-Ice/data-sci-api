@@ -27,3 +27,10 @@ components:
   schemas:
     ExampleItem:
       $ref: "example.yml#/components/schemas/ExampleItem"
+
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: X-Auth
+      in: header
+      x-apikeyInfoFunc: src.core.auth.verify_apikey

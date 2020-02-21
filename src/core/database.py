@@ -13,13 +13,17 @@ def _render_settings_from_current_config():
     }
 
 
-def query(sql: str, db_settings: dict = None) -> list:
-    """Connect to the database based on DB_SETTINGS and execute SQL."""
+def query(sql: str, db_settings: dict = None, **sql_params) -> list:
+    """Connect to the database based on DB_SETTINGS and execute SQL
+    with SQL_PARAMS.
+    
+    Note: Use sql_params and NEVER use Python string formatting to 
+    avoid SQL Injection Attacks."""
     if not db_settings:
         db_settings = _render_settings_from_current_config()
     with psycopg2.connect(**db_settings) as conn:
         with conn.cursor() as cursor:
-            cursor.execute(sql)
+            cursor.execute(sql, sql_params)
             return cursor.fetchall()
 
 

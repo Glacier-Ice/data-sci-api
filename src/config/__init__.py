@@ -35,6 +35,7 @@ class Config(object):
             "db_name",
             "db_port",
             "db_host",
+            "api_tokens",
         }
 
     def _verify_fields(self):

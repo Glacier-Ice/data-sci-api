@@ -14,7 +14,8 @@ def _render_settings_from_current_config():
 
 
 def query(sql: str, db_settings: dict = None, **sql_params) -> list:
-    """Connect to the database based on DB_SETTINGS and execute SQL.
+    """Connect to the database based on DB_SETTINGS and execute SQL
+    with SQL_PARAMS.
     
     Note: Use sql_params and NEVER use Python string formatting to 
     avoid SQL Injection Attacks."""

@@ -65,8 +65,10 @@ paths:
           name: name
           description: query by name of the city/province
           schema:
-            type: string
-            example: "武汉"
+            type: array
+            items:
+              type: string
+            example: ["武汉", "长沙"]
           required: true
         - in: query
           name: granularity
@@ -74,6 +76,7 @@ paths:
           schema:
             type: string
             enum: [city, province]
+          required: true
         - in: query
           name: start
           description: |
@@ -82,8 +85,8 @@ paths:
             are specified, start date must be before or equal to end date.
           schema:
             type: string
-            format: date-time
-            example: 2008-08-08T09:00:00.001Z
+            format: date
+            example: 2020-01-25
         - in: query
           name: end
           description: |
@@ -92,18 +95,29 @@ paths:
             are specified, start date must be before or equal to end date.
           schema:
             type: string
-            format: date-time
-            example: 2008-08-08T09:00:00.001Z
+            format: date
+            example: 2020-01-26
+        - in: query
+          name: limit
+          description: |
+            when you don't really need ALL of the data, 
+            putting a limit to the query can avoid potential crash
+          schema:
+            type: integer
+            format: int32
+            example: 500
+            default: 0
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-                type: object
-                oneOf:
-                  - $ref: "#/components/schemas/EpidemicItemByCity"
-                  - $ref: "#/components/schemas/EpidemicItemByProvince"
+                type: array
+                items:
+                  oneOf:
+                    - $ref: "#/components/schemas/EpidemicItemByCity"
+                    - $ref: "#/components/schemas/EpidemicItemByProvince"
         "400":
           $ref: "errors.yml#/components/BadRequest"
         "500":
@@ -133,8 +147,8 @@ components:
           example: 1
         curday:
           type: string
-          format: date-time
-          example: 2008-08-08T09:00:00.001Z
+          format: date
+          example: 2008-08-08
         city_name:
           type: string
           example: 长沙
@@ -170,8 +184,8 @@ components:
           example: 1
         curday:
           type: string
-          format: date-time
-          example: 2008-08-08T09:00:00.001Z
+          format: date
+          example: 2008-08-08
         province_name:
           type: string
           example: 湖南省

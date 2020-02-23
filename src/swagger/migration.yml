@@ -1,0 +1,142 @@
+paths:
+  /migration/all:
+    get:
+      tags:
+        - Migration
+      summary: Get all available migration data
+      operationId: src.api.migration.get_all
+      description: |
+        By passing in the appropriate options,
+        you can get all of the available migration data.
+      parameters:
+        - in: query
+          name: limit
+          description: |
+            when you don't really need ALL of the data,
+            putting a limit to the query can avoid potential crash
+          schema:
+            type: integer
+            format: int32
+            example: 500
+            default: 0
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - $ref: "#/components/schemas/Migration"
+        "400":
+          $ref: "errors.yml#/components/BadRequest"
+        "500":
+          $ref: "errors.yml#/components/InternalServerError"
+        # Definition of all other error statuses
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "errors.yml#/components/schemas/Error"
+      security:
+        - api_key: []
+
+  /migration/query:
+    post:
+      tags:
+        - Migration
+      summary: Get migration data by specific criteria
+      operationId: src.api.migration.query
+      description: |
+        By passing in the appropriate options,
+        you can get specific migration data of interest
+      parameters:
+        - in: query
+          name: start
+          description: |
+            Returns only data with an equal or later start datetime.
+            Can be specified at most once. If both start and end date
+            are specified, start date must be before or equal to end date.
+          schema:
+            type: string
+            format: date
+            example: 2020-01-25
+        - in: query
+          name: end
+          description: |
+            Returns only data with an equal or earlier end datetime.
+            Can be specified at most once. If both start and end date
+            are specified, start date must be before or equal to end date.
+          schema:
+            type: string
+            format: date
+            example: 2020-01-26
+        - in: query
+          name: limit
+          description: |
+            when you don't really need ALL of the data,
+            putting a limit to the query can avoid potential crash
+          schema:
+            type: integer
+            format: int32
+            example: 500
+            default: 0
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - $ref: "#/components/schemas/Migration"
+        "400":
+          $ref: "errors.yml#/components/BadRequest"
+        "500":
+          $ref: "errors.yml#/components/InternalServerError"
+        # Definition of all other error statuses
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "errors.yml#/components/schemas/Error"
+      security:
+        - api_key: []
+
+components:
+  schemas:
+    Migration:
+      type: object
+      required:
+        - m_date
+        - from_city
+        - to_city
+        - to_province
+        - percentage
+        - migration_index
+      properties:
+        m_date:
+          type: string
+          format: date
+          example: 2020-02-11
+        from_city:
+          type: string
+          example: 北京
+        to_city:
+          type: string
+          example: 廊坊
+        to_province:
+          type: string
+          example: 河北
+        percentage:
+          type: number
+          format: float
+          example: 18.89
+        migration_index:
+          type: number
+          format: float
+          example: 1.919927

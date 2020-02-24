@@ -11,7 +11,7 @@ def yesterday():
     return (datetime.date.today() + datetime.timedelta(days=-1)).strftime(DATE_FORMAT)
 
 
-def all_days_since_last_month(end_date_not_inclusive: str):
+def all_dates_since_last_month(end_date_not_inclusive: str):
     end_date_not_inclusive = datetime.datetime.strptime(end_date_not_inclusive, DATE_FORMAT).date()
     to_add = end_date_not_inclusive + datetime.timedelta(days=-30)
     res = []

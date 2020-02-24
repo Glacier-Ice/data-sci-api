@@ -18,6 +18,8 @@ tags:
     description: Economy Data
   - name: Epidemic
     description: The epidemic data about the outbreak
+  - name: Migration
+    description: The migration data from city to city
 
 # Refer to https://swagger.io/docs/specification/using-ref/ for Escape Characters e.g. ~1
 paths:
@@ -29,6 +31,10 @@ paths:
     $ref: "epidemic.yml#/paths/~1epidemic~1all"
   /epidemic/query:
     $ref: "epidemic.yml#/paths/~1epidemic~1query"
+  /migration/all:
+    $ref: "migration.yml#/paths/~1migration~1all"
+  /migration/query:
+    $ref: "migration.yml#/paths/~1migration~1query"
 components:
   schemas:
     ExampleItem:
@@ -37,6 +43,8 @@ components:
       $ref: "epidemic.yml#/components/schemas/EpidemicItemByProvince"
     EpidemicItemByCity:
       $ref: "epidemic.yml#/components/schemas/EpidemicItemByCity"
+    Migration:
+      $ref: "migration.yml#/components/schemas/Migration"
 
   securitySchemes:
     api_key:

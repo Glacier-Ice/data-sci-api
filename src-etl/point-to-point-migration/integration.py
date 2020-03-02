@@ -81,6 +81,22 @@ def get_p2p_overall_dataframe(dates=[yesterday()]):
     return pd.DataFrame(res)
 
 
+def get_index_overall_dataframe(date=yesterday()):
+    res = []
+    for _, row in get_city_code_table().iterrows():
+        history_curve = load_history(date, row.adcode)
+        if history_curve is None:
+            continue
+        city = row["name"]
+        if city[-1] in ["省", "市"]:
+            city = city[-1]
+        for this_date in history_curve.values():
+            new_entry = {"m_date": pd.to_datetime(this_date), "city": city, "migration_index": history_curve[date]}
+            res.append(new_entry)
+
+    return pd.DataFrame(res)
+
+
 if __name__ == "__main__":
     res = get_p2p_overall_dataframe()
     res.info()

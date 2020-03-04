@@ -1,0 +1,4 @@
+pymdown-extensions
+markdown-include
+mkdocs-material
+mkdocs-bootswatch

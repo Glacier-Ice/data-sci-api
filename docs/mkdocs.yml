@@ -1,0 +1,37 @@
+site_name: GlacierData
+
+repo_url: https://github.com/rexwangcc/data-sci-api
+
+copyright: Copyright © 2019-2020. All Rights Reserved
+
+theme:
+  name: flatly
+  # name: material
+  # palette:
+  #   primary: blue
+  #   accent: teal
+  # logo: img/logo.png
+  # feature:
+  #   tabs: true
+
+  # name: null
+  # custom_dir: theme
+
+extra:
+  version: 2.0
+  social:
+    - type: 'github'
+      link: 'https://github.com/rexwangcc/data-sci-api'
+
+nav:
+  - Introduction: index.md
+  - Join Us: team-up.md
+
+markdown_extensions:
+  - codehilite
+  - admonition
+  - pymdownx.superfences
+  - toc:
+      permalink: True
+  - markdown_include.include:
+      base_path: docs

@@ -5,14 +5,14 @@ repo_url: https://github.com/rexwangcc/data-sci-api
 copyright: Copyright © 2019-2020. All Rights Reserved
 
 theme:
-  name: flatly
-  # name: material
-  # palette:
-  #   primary: blue
-  #   accent: teal
-  # logo: img/logo.png
-  # feature:
-  #   tabs: true
+  # name: flatly
+  name: material
+  palette:
+    primary: blue
+    accent: teal
+  logo: img/logo.png
+  feature:
+    tabs: true
 
   # name: null
   # custom_dir: theme
@@ -20,8 +20,8 @@ theme:
 extra:
   version: 2.0
   social:
-    - type: 'github'
-      link: 'https://github.com/rexwangcc/data-sci-api'
+    - type: "github"
+      link: "https://github.com/rexwangcc/data-sci-api"
 
 nav:
   - Introduction: index.md

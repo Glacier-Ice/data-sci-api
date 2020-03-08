@@ -22,8 +22,13 @@ extra:
       link: "https://github.com/rexwangcc/data-sci-api"
 
 nav:
-  - Introduction: index.md
-  - Join Us: team-up.md
+  - Welcome: index.md
+  - English:
+      # - Introduction: EN/intro.md
+      - Join Us: EN/team-up.md
+  - 中文:
+      - 加入我们: CN/team-up.md
+      # - Join Us: CN/team-up.md
 
 markdown_extensions:
   - codehilite

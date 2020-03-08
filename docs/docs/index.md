@@ -1,4 +1,5 @@
 ## Welcome to Glacier Data Project
 
-We are looking for new members! Check [Join Us](/team-up/).
+![](/img/logo.png)
 
+**We are looking for new members! Check [Join Us](/EN/team-up/).**

@@ -6,7 +6,7 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flat-square)](https://github.com/pre-commit/pre-commit)
 <!-- ![Build Status](https://github.com/rexwangcc/data-sci-api/workflows/Tests%20on%20Pull%20Requests%20and%20Master/badge.svg?branch=master&event=push) -->
 
-English | [简体中文](./README_CN.md)
+English
 
 The API is designed to be thin and stateless. It relies on the data collected and validated by other sub-projects, transform and expose them through standard RESTful APIs. The service is written in Python and Flask.
 

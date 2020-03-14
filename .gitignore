@@ -11,3 +11,6 @@ venv/
 
 # avoid checkout credentials
 config.json
+
+# docs artifact
+docs/site/

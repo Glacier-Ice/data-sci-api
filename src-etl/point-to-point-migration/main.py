@@ -1,78 +1,40 @@
+import psycopg2
 import json
-import logging
+from integration import get_p2p_overall_dataframe, get_index_overall_dataframe
+from dateutils import all_dates_since_last_month, today
+from sqlalchemy import create_engine
+
 import os
 
-import pandas as pd
-from crawl import crawl_history, crawl_p2p
-from dateutils import yesterday
-from filemap import FilepathMapper
-from read_assets import get_city_code_table
-from variables import LOGGER_LEVEL
-
-logger = logging.getLogger()
-logger.setLevel(LOGGER_LEVEL)
+config_path = os.getenv("CONFIG_PATH")
+config = json.loads(config_path)
 
 
-def update_history_if_outdated(direction, city_id):
-    path = FilepathMapper.history("110000", direction)
-    with open(path, "r", encoding="utf-8") as f:
-        res = f.read()
-    if yesterday() not in res:
-        logger.info("Obtaining the latest history data.")
-        crawl_history(direction)
+def insert_history():
+    engine = create_engine(
+        f"postgresql://{config['db_username']}:{config['db_password']}@{config['db_host']}:{config['db_port']}/{config['db_name']}"
+    )
+    df = get_p2p_overall_dataframe(all_dates_since_last_month(today()))
+    df.to_sql("p2p_migration", engine, if_exists="replace", index=False, method="multi")
 
 
-def load_history(date, city_id):
-    update_history_if_outdated("in", city_id)
-    path = FilepathMapper.history(city_id, "in")
-    if os.path.exists(path):
-        logger.info(f"Reading <{city_id}> <{date}> history data")
-        with open(path, "r", encoding="utf-8") as f:
-            res = f.read()
-
-        return json.loads(res.split("(")[-1][:-1])["data"]["list"]
-    else:
-        return None
+def insert_latest():
+    engine = create_engine(
+        f"postgresql://{config['db_username']}:{config['db_password']}@{config['db_host']}:{config['db_port']}/{config['db_name']}"
+    )
+    df = get_p2p_overall_dataframe()
+    df.to_sql("p2p_migration", engine, if_exists="append", index=False, method="multi")
 
 
-def load_p2p(date, city_id):
-    path = FilepathMapper.p2p(date, city_id, "in")
-    if not os.path.exists(path):
-        logger.info("Obtaining the latest point to point data")
-        crawl_p2p("in", date)
-
-    logger.info(f"Reading <{city_id}> <{date}> point to point data")
-    with open(path, "r", encoding="utf-8") as f:
-        res = f.read()
-
-    return json.loads(res.split("(")[-1][:-1])["data"]["list"]
-
-
-def get_p2p_overall_dataframe(dates=[yesterday()]):
-    res = []
-    for date in dates:
-        for _, row in get_city_code_table().iterrows():
-            history_curve = load_history(date, row.adcode)
-            if history_curve is None:
-                continue
-            move_data = load_p2p(date, row.adcode)
-            for record in move_data:
-                to_city = record["city_name"]
-                if to_city[-1] == "市":
-                    to_city = to_city[:-1]
-                new_entry = {
-                    "date": date,
-                    "from": row["name"],
-                    "to": to_city,
-                    "to_province": record["province_name"],
-                    "percentage": record["value"],
-                    "migration_index": history_curve[date],
-                }
-                res.append(new_entry)
-    return pd.DataFrame(res)
+def insert_overwrite_index():
+    engine = create_engine(
+        f"postgresql://{config['db_username']}:{config['db_password']}@{config['db_host']}:{config['db_port']}/{config['db_name']}"
+    )
+    df = get_index_overall_dataframe()
+    df.to_sql("migration_index", engine, if_exists="replace", index=False, method="multi")
 
 
 if __name__ == "__main__":
-    res = get_p2p_overall_dataframe()
-    res.info()
-    print(res.head(10))
+    # insert_history()
+    insert_latest()
+    insert_overwrite_index()

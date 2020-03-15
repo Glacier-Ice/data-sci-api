@@ -20,7 +20,7 @@ Date: 2020-02-17 13:21:46
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."area_city";
 CREATE TABLE "public"."area_city" (
-"id" int4 DEFAULT nextval('area_city_id_seq'::regclass) NOT NULL,
+"id" int4 DEFAULT nextval('area_city_id_seq'::regclass) PRIMARY KEY,
 "curday" date,
 "city_name" varchar(255) COLLATE "default",
 "city_code" int4,
@@ -6482,10 +6482,5 @@ INSERT INTO "public"."area_city" VALUES ('7037', '2020-02-14', '文山州', '532
 INSERT INTO "public"."area_city" VALUES ('7038', '2020-02-14', '临沧', '530900', '1', '0', '0', '0');
 
 -- ----------------------------
--- Alter Sequences Owned By 
+-- Alter Sequences Owned By
 -- ----------------------------
-
--- ----------------------------
--- Primary Key structure for table area_city
--- ----------------------------
-ALTER TABLE "public"."area_city" ADD PRIMARY KEY ("id");

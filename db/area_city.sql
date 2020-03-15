@@ -20,7 +20,7 @@ Date: 2020-02-17 13:21:46
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."area_city";
 CREATE TABLE "public"."area_city" (
-"id" int4 DEFAULT nextval('area_city_id_seq') PRIMARY KEY,
+"id" SERIAL PRIMARY KEY,
 "curday" date,
 "city_name" varchar(255) COLLATE "default",
 "city_code" int4,

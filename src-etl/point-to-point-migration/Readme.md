@@ -1,12 +1,12 @@
 # Point to point migration data
 
-## Usage
+## Programmatic Usage
 
-The `get_p2p_overall_dataframe` in [main.py](main.py) receives a list of dates in the format `%Y%M%d`, e.g. `20200215`, and returns a pandas DataFrame of the point to point migration data.
+The `get_p2p_overall_dataframe` in [integration.py](integration.py) receives a list of dates in the format `%Y%M%d`, e.g. `20200215`, and returns a pandas DataFrame of the point to point migration data.
 
 Due to the TTL of the data source, only data within one month is available.
 
-Example usage can be found at the `if __name__=="__main__"` part in [main.py](main.py), the output of which is
+Example usage can be found at the `if __name__=="__main__"` part in [integration.py](integration.py), the output of which is
 
 ```text
 <class 'pandas.core.frame.DataFrame'>
@@ -58,4 +58,12 @@ get_p2p_overall_dataframe([yesterday()])
 
 # or
 get_p2p_overall_dataframe() # as [yesterday()] is set as default
+```
+
+## Running as a Daily Cronjob Script
+
+`cd` to `src-etl/point-to-point-migration`, and run
+
+```bash
+$ python main.py
 ```

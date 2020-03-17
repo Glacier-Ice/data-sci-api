@@ -11,6 +11,8 @@ create database data;
 \i area_city.sql;
 \i area_province.sql;
 \i area_relation.sql;
+\i data/area_city_data.sql;
+\i data/area_province_data.sql;
 ```
 Thus the database schema is successfully intialized.
 
@@ -43,4 +45,3 @@ epidemic是go写的存储疫情数据代码，后面考虑用python改一下。�
 | cured_count     | bigint  | 治愈数 |
 | dead_count      | bigint  | 死亡数 |
 | suspected_count | bigint  | 疑似数 |
-

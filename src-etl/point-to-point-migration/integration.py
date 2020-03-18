@@ -15,10 +15,14 @@ logger.setLevel(LOGGER_LEVEL)
 
 def update_history_if_outdated(direction, city_id):
     path = FilepathMapper.history("110000", direction)
-    with open(path, "r", encoding="utf-8") as f:
-        res = f.read()
-    if yesterday() not in res:
-        logger.info("Obtaining the latest history data.")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            res = f.read()
+        if yesterday() not in res:
+            logger.info("Obtaining the latest history data.")
+            crawl_history(direction)
+    else:
+        logger.info("Obtaining the history data for the first time.")
         crawl_history(direction)
 
 
@@ -29,7 +33,6 @@ def load_history(date, city_id):
         logger.info(f"Reading <{city_id}> <{date}> history data")
         with open(path, "r", encoding="utf-8") as f:
             res = f.read()
-
         return json.loads(res.split("(")[-1][:-1])["data"]["list"]
     else:
         return None

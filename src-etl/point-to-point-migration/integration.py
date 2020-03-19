@@ -15,10 +15,14 @@ logger.setLevel(LOGGER_LEVEL)
 
 def update_history_if_outdated(direction, city_id):
     path = FilepathMapper.history("110000", direction)
-    with open(path, "r", encoding="utf-8") as f:
-        res = f.read()
-    if yesterday() not in res:
-        logger.info("Obtaining the latest history data.")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            res = f.read()
+        if yesterday() not in res:
+            logger.info("Obtaining the latest history data.")
+            crawl_history(direction)
+    else:
+        logger.info("Obtaining the history data for the first time.")
         crawl_history(direction)
 
 
@@ -29,7 +33,6 @@ def load_history(date, city_id):
         logger.info(f"Reading <{city_id}> <{date}> history data")
         with open(path, "r", encoding="utf-8") as f:
             res = f.read()
-
         return json.loads(res.split("(")[-1][:-1])["data"]["list"]
     else:
         return None
@@ -89,8 +92,8 @@ def get_index_overall_dataframe(date=yesterday()):
             continue
         city = row["name"]
         if city[-1] in ["省", "市"]:
-            city = city[-1]
-        for this_date in history_curve.values():
+            city = city[:-1]
+        for this_date in history_curve.keys():
             new_entry = {"m_date": pd.to_datetime(this_date), "city": city, "migration_index": history_curve[date]}
             res.append(new_entry)
 

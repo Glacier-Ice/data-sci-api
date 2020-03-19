@@ -1,6 +1,12 @@
 # Point to point migration data
 
 ## Programmatic Usage
+```
+python integration.py # get baidu data
+mv db-config.json.example db-config.json # modify the db config
+export CONFIG_PATH=$(cat db-config.json) 
+python main.py # put the data into db
+```
 
 The `get_p2p_overall_dataframe` in [integration.py](integration.py) receives a list of dates in the format `%Y%M%d`, e.g. `20200215`, and returns a pandas DataFrame of the point to point migration data.
 

@@ -10,7 +10,7 @@ config_path = os.getenv("CONFIG_PATH")
 config = json.loads(config_path)
 
 
-def insert_history():
+def insert_overwrite_history():
     engine = create_engine(
         f"postgresql://{config['db_username']}:{config['db_password']}@{config['db_host']}:{config['db_port']}/{config['db_name']}"
     )

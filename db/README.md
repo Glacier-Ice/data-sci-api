@@ -1,7 +1,7 @@
 We recommend to use postgres docker to run the database server:
 ```
 docker pull postgres:10
-docker run -it --rm -v $PWD:/data -e POSTGRES_PASSWORD=abc -p 5432:5432 postgres:10
+docker run -it --rm -v $PWD:/data -e PGDATA=/data/pgdata -e POSTGRES_PASSWORD=abc -p 5432:5432 postgres:10
 ```
 Then in another shell terminal, use `psql -h 127.0.0.1 -p 5432 -U postgres` to
 connect to the server. Then

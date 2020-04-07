@@ -21,3 +21,15 @@ def all_dates_since_last_month(end_date_not_inclusive: str):
         if to_add == end_date_not_inclusive:
             break
     return res
+
+
+def from_date_to_date(begin_date: str, end_date: str):
+    end_date_not_inclusive = datetime.datetime.strptime(end_date, DATE_FORMAT).date()
+    to_add = datetime.datetime.strptime(begin_date, DATE_FORMAT).date()
+    res = []
+    while True:
+        to_add += datetime.timedelta(days=1)
+        res.append(to_add.strftime(DATE_FORMAT))
+        if to_add == end_date_not_inclusive:
+            break
+    return res

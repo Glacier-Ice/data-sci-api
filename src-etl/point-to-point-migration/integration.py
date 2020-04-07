@@ -8,6 +8,7 @@ from dateutils import yesterday
 from filemap import FilepathMapper
 from read_assets import get_city_code_table
 from variables import LOGGER_LEVEL
+import time
 
 logger = logging.getLogger()
 logger.setLevel(LOGGER_LEVEL)
@@ -54,6 +55,7 @@ def load_p2p(date, city_id):
 def get_p2p_overall_dataframe(dates=[yesterday()]):
     res = []
     for date in dates:
+        print(date)
         for _, row in get_city_code_table().iterrows():
             history_curve = load_history(date, row.adcode)
             if history_curve is None:
@@ -81,6 +83,7 @@ def get_p2p_overall_dataframe(dates=[yesterday()]):
                     "migration_index": history_curve[date],
                 }
                 res.append(new_entry)
+        time.sleep(2)
     return pd.DataFrame(res)
 
 
@@ -101,6 +104,8 @@ def get_index_overall_dataframe(date=yesterday()):
 
 
 if __name__ == "__main__":
+
+#    res = get_p2p_overall_dataframe()
     res = get_p2p_overall_dataframe()
     res.info()
     print(res.head(10))

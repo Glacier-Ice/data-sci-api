@@ -13,7 +13,6 @@ logger.setLevel(LOGGER_LEVEL)
 
 SLEEP_SEC = 1
 
-
 def crawl_p2p(direction: str, date=yesterday()):
     assert direction in ["in", "out"]
     city_code = get_city_codes()

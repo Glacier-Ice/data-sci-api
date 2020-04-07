@@ -44,5 +44,5 @@ def insert_overwrite_index():
 
 if __name__ == "__main__":
     # insert_history()
-    insert_latest()
+#    insert_latest()
     insert_overwrite_index()

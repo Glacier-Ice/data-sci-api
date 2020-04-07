@@ -83,7 +83,7 @@ def get_p2p_overall_dataframe(dates=[yesterday()]):
                     "migration_index": history_curve[date],
                 }
                 res.append(new_entry)
-        time.sleep(2)
+        time.sleep()
     return pd.DataFrame(res)
 
 
@@ -97,7 +97,7 @@ def get_index_overall_dataframe(date=yesterday()):
         if city[-1] in ["省", "市"]:
             city = city[:-1]
         for this_date in history_curve.keys():
-            new_entry = {"m_date": pd.to_datetime(this_date), "city": city, "migration_index": history_curve[date]}
+            new_entry = {"m_date": pd.to_datetime(this_date), "city": city, "migration_index": history_curve[this_date]}
             res.append(new_entry)
 
     return pd.DataFrame(res)

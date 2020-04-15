@@ -23,12 +23,9 @@ extra:
 
 nav:
   - Welcome to Glacier Data Project: index.md
-  - English:
-      # - Introduction: EN/intro.md
-      - Join Us: EN/team-up.md
-  - 中文:
-      - 加入我们: CN/team-up.md
-      # - Join Us: CN/team-up.md
+  - Our Resources: EN/resources.md
+  - Join Us: EN/team-up.md
+  - 加入我们: CN/team-up.md
 
 markdown_extensions:
   - codehilite

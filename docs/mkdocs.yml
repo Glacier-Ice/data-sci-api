@@ -11,8 +11,8 @@ theme:
     primary: blue
     accent: teal
   logo: img/logo.png
-  feature:
-    tabs: true
+  features:
+    - tabs
   custom_dir: theme
 
 extra:

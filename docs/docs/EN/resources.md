@@ -15,6 +15,6 @@ It's worth noticing that even between OECD countries, the level of information d
 However, some crowd-sourcing/self-organizing research groups has managed to form some of the datasets in several places. Including the famous [covid-tracking project](https://covidtracking.com/) and [JHU dashboard](http://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html) in the US.
 
 Here we present some datasets available for research. Though many of them are not our best recommendation but are the best in the public space.
-We hope to work under the licence that anyone working with the facilitate of this project agrees to public his/her own data as work get published.
+We hope to work under the licence that anyone working with the facilitate of this project agrees to public his/her own data the time his/her work get published.
 
 <add data sources>

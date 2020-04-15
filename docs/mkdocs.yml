@@ -22,7 +22,7 @@ extra:
       link: "https://github.com/Glacier-Ice/data-sci-api"
 
 nav:
-  - Welcome to Glacier Data Project: index.md
+  - About US: index.md
   - Our Resources: EN/resources.md
   - Join Us: EN/team-up.md
   - 加入我们: CN/team-up.md

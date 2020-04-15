@@ -10,7 +10,7 @@ Based on our experience in studying China outbreak, there are several basic data
 - All variables that can address the demography or level of public governance.
 
 Those datasets are not available for all localities, and many of them don't have quality control or have a vague definition thus make it impossible to make a cross-border comparison.
-It's worth noticing that even between OECD countries, the level of information disclosure between countries varies. Not to mention other countries that has more diverged economic or social natural.
+It's worth noticing that even between OECD countries, the level of information disclosure between countries varies. Not to mention other countries that has more diverged economic or social nature.
 
 However, some crowd-sourcing/self-organizing research groups has managed to form some of the datasets in several places. Including the famous [covid-tracking project](https://covidtracking.com/) and [JHU dashboard](http://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html) in the US.
 

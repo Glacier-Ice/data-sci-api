@@ -28,8 +28,9 @@ We hope to work under the licence that anyone working with the facilitate of thi
 - Transmission: Baidu Migration Index
 - Social-distancing control: Not applicable
 - Number of testing: Not applicable
-- Availability of hospital resources: City Level available
+- Availability of hospital resources: City Level available, Hospital Level [Paid Data](https://db.yaozh.com/hmap?p=4&pageSize=20)
 - Demography/Public governance: City level available
+- Others: [News](https://github.com/chinatimeline/chinatimeline.github.io)
 
 ## The United States
 - Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
@@ -39,7 +40,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 - Number of testing: [covid-tracking project](https://covidtracking.com/)
 - Availability of hospital resources: [ICU Beds from KNN](https://khn.org/news/as-coronavirus-spreads-widely-millions-of-older-americans-live-in-counties-with-no-icu-beds/#lookup)
 - Demography/Public governance: [COVID-19_US_County-level_Summaries Project](https://github.com/JieYingWu/COVID-19_US_County-level_Summaries)
-- Others: [News Media](https://github.com/narcisoyu/Institutional-and-news-media-tweet-dataset-for-COVID-19-social-science-research)
+- Others: [News Media](https://github.com/narcisoyu/Institutional-and-news-media-tweet-dataset-for-COVID-19-social-science-research) [Twitters](https://github.com/thepanacealab/covid19_twitter)
 
 ## Europe
 <add here>

@@ -18,4 +18,28 @@ However, some crowd-sourcing/self-organizing research groups has managed to form
 Here we present some datasets available for research. Though many of them are not our best recommendation but are the best in the public space.
 We hope to work under the licence that anyone working with the facilitate of this project agrees to make his/her own data public the time his/her work get published.
 
-<add data sources>
+## Data Resources by Regions
+### World
+
+
+### China
+- Number of Patients: [Daily](https://github.com/Glacier-Ice/COVID-19-2019-nCoV-Infection-Data-cleaning-) [Hourly](https://github.com/BlankerL/DXY-COVID-19-Data/blob/master/README.en.md)
+- Detailed Patient Data [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
+- Transmission: Baidu Migration Index
+- Social-distancing control: Not applicable
+- Number of testing: Not applicable
+- Availability of hospital resources: City Level available
+- Demography/Public governance: City level available
+
+## The United States
+- Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
+- Detailed Patient Data: [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
+- Transmission: Not applicable
+- Social-distancing control: [School Closure](https://www.kaggle.com/jaimeblasco/coronavirus-and-school-closures)
+- Number of testing: [covid-tracking project](https://covidtracking.com/)
+- Availability of hospital resources: [ICU Beds from KNN](https://khn.org/news/as-coronavirus-spreads-widely-millions-of-older-americans-live-in-counties-with-no-icu-beds/#lookup)
+- Demography/Public governance: [COVID-19_US_County-level_Summaries Project](https://github.com/JieYingWu/COVID-19_US_County-level_Summaries)
+- Others: [News Media](https://github.com/narcisoyu/Institutional-and-news-media-tweet-dataset-for-COVID-19-social-science-research)
+
+## Europe
+<add here>

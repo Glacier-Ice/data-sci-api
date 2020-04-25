@@ -25,7 +25,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 - Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
 - Detailed Patient Data: Not applicable
 - Transmission: Not applicable. Paid data resource: IATA
-- Social-distancing control: [Oxford Project](http://epidemicforecasting.org/containment) [Google Mobility](https://www.google.com/covid19/mobility/) [School Closure UNESCO](https://data.humdata.org/dataset/global-school-closures-covid19) [Travel Restriction IATA](https://data.humdata.org/dataset/travel-restiction-monitoring-iata-covid-19-iom-dtm)
+- Social-distancing control: [Oxford Project](http://epidemicforecasting.org/containment), [Google Mobility](https://www.google.com/covid19/mobility/), [School Closure UNESCO](https://data.humdata.org/dataset/global-school-closures-covid19), [Travel Restriction IATA](https://data.humdata.org/dataset/travel-restiction-monitoring-iata-covid-19-iom-dtm)
 - Number of testing: [Our World in Data](https://data.humdata.org/dataset/total-covid-19-tests-performed-by-country)
 - Availability of hospital resources: WHO
 - Demography/Public governance: UN, [World Bank](https://data.humdata.org/dataset/world-bank-indicators-of-interest-to-the-covid-19-outbreak)
@@ -33,7 +33,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 
 ### China
 Two Levels: Province/City
-- Number of Patients: [Daily](https://github.com/Glacier-Ice/COVID-19-2019-nCoV-Infection-Data-cleaning-) [Hourly](https://github.com/BlankerL/DXY-COVID-19-Data/blob/master/README.en.md)
+- Number of Patients: [Daily](https://github.com/Glacier-Ice/COVID-19-2019-nCoV-Infection-Data-cleaning-), [Hourly](https://github.com/BlankerL/DXY-COVID-19-Data/blob/master/README.en.md)
 - Detailed Patient Data [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
 - Transmission: Baidu Migration Index [Harvard](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FAEZIO)
 - Social-distancing control: Not applicable [Harvard requires to check](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OAM2JK)
@@ -49,7 +49,7 @@ Two Levels: State/County
 - Transmission: Not applicable
 - Social-distancing control: [School Closure](https://www.kaggle.com/jaimeblasco/coronavirus-and-school-closures)
 - Number of testing: [covid-tracking project](https://covidtracking.com/)
-- Availability of hospital resources: [ICU Beds from KNN](https://khn.org/news/as-coronavirus-spreads-widely-millions-of-older-americans-live-in-counties-with-no-icu-beds/#lookup) [Beds AWS](https://aws.amazon.com/marketplace/pp/prodview-yivxd2owkloha?qid=1585241268884&sr=0-8&ref_=srh_res_product_title#overview)
+- Availability of hospital resources: [ICU Beds from KNN](https://khn.org/news/as-coronavirus-spreads-widely-millions-of-older-americans-live-in-counties-with-no-icu-beds/#lookup), [Beds on AWS](https://aws.amazon.com/marketplace/pp/prodview-yivxd2owkloha?qid=1585241268884&sr=0-8&ref_=srh_res_product_title#overview)
 - Demography/Public governance: [COVID-19_US_County-level_Summaries Project](https://github.com/JieYingWu/COVID-19_US_County-level_Summaries)
 - Others: [News Media](https://github.com/narcisoyu/Institutional-and-news-media-tweet-dataset-for-COVID-19-social-science-research) [Twitters](https://github.com/thepanacealab/covid19_twitter)
 

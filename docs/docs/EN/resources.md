@@ -42,7 +42,7 @@ Two Levels: Province/City
 - Demography/Public governance: City level available
 - Others: [News](https://github.com/chinatimeline/chinatimeline.github.io)
 
-## The United States
+### The United States
 Two Levels: State/County
 - Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
 - Detailed Patient Data: [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
@@ -53,5 +53,5 @@ Two Levels: State/County
 - Demography/Public governance: [COVID-19_US_County-level_Summaries Project](https://github.com/JieYingWu/COVID-19_US_County-level_Summaries)
 - Others: [News Media](https://github.com/narcisoyu/Institutional-and-news-media-tweet-dataset-for-COVID-19-social-science-research) [Twitters](https://github.com/thepanacealab/covid19_twitter)
 
-## Europe
+### Europe
 Two Levels: Country/Province

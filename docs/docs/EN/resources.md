@@ -35,7 +35,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 Two Levels: Province/City
 - Number of Patients: [Daily](https://github.com/Glacier-Ice/COVID-19-2019-nCoV-Infection-Data-cleaning-), [Hourly](https://github.com/BlankerL/DXY-COVID-19-Data/blob/master/README.en.md)
 - Detailed Patient Data [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
-- Transmission: Baidu Migration Index [Harvard](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FAEZIO)
+- Transmission: Baidu Migration Index archieved by [Harvard](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FAEZIO)
 - Social-distancing control: Not applicable [Harvard requires to check](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OAM2JK)
 - Number of testing: Not applicable
 - Availability of hospital resources: City Level available, Hospital Level [Paid Data](https://db.yaozh.com/hmap?p=4&pageSize=20)

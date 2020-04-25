@@ -30,7 +30,6 @@ We hope to work under the licence that anyone working with the facilitate of thi
 - Availability of hospital resources: WHO
 - Demography/Public governance: UN, [World Bank](https://data.humdata.org/dataset/world-bank-indicators-of-interest-to-the-covid-19-outbreak)
 
-
 ### China
 Two Levels: Province, City
 - Number of Patients: [Daily](https://github.com/Glacier-Ice/COVID-19-2019-nCoV-Infection-Data-cleaning-), [Hourly](https://github.com/BlankerL/DXY-COVID-19-Data/blob/master/README.en.md)
@@ -44,7 +43,7 @@ Two Levels: Province, City
 
 ### The United States
 Two Levels: State, County
-- Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
+- Number of Patients: [JHU](https://github.com/CSSEGISandData/COVID-19), [NY Times](https://github.com/nytimes/covid-19-data): worth noticing that looks like JHU does not verify data by themselves.
 - Detailed Patient Data: [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
 - Transmission: Not applicable
 - Social-distancing control: [School Closure](https://www.kaggle.com/jaimeblasco/coronavirus-and-school-closures)

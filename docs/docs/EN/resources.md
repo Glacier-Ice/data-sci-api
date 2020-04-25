@@ -19,6 +19,8 @@ Here we present some datasets available for research. Though many of them are no
 We hope to work under the licence that anyone working with the facilitate of this project agrees to make his/her own data public the time his/her work get published.
 
 ## Data Resources by Regions
+**For each country, we usually have two levels of data. The data of province/state level is more abundant**
+
 ### World
 - Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
 - Detailed Patient Data: Not applicable
@@ -30,6 +32,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 
 
 ### China
+Two Levels: Province/City
 - Number of Patients: [Daily](https://github.com/Glacier-Ice/COVID-19-2019-nCoV-Infection-Data-cleaning-) [Hourly](https://github.com/BlankerL/DXY-COVID-19-Data/blob/master/README.en.md)
 - Detailed Patient Data [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
 - Transmission: Baidu Migration Index [Harvard](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FAEZIO)
@@ -40,6 +43,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 - Others: [News](https://github.com/chinatimeline/chinatimeline.github.io)
 
 ## The United States
+Two Levels: State/County
 - Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
 - Detailed Patient Data: [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
 - Transmission: Not applicable
@@ -50,4 +54,4 @@ We hope to work under the licence that anyone working with the facilitate of thi
 - Others: [News Media](https://github.com/narcisoyu/Institutional-and-news-media-tweet-dataset-for-COVID-19-social-science-research) [Twitters](https://github.com/thepanacealab/covid19_twitter)
 
 ## Europe
-<add here>
+Two Levels: Country/Province

@@ -16,7 +16,7 @@ We already have transparancy in some regions of the world. The African union (AU
 However, some crowd-sourcing/self-organizing research groups has managed to form some of the datasets in several places. Including the famous [covid-tracking project](https://covidtracking.com/) and [JHU dashboard](http://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html) in the US.
 
 Here we present some datasets available for research. Though many of them are not our best recommendation but are the best in the public space.
-We hope to work under the licence that anyone working with the facilitate of this project agrees to make his/her own data public the time his/her work get published.
+We hope to work under the licence that anyone working with the facilitate of this project agrees to make his/her own data public the time his/her work get published. Also, feel free to open issues for adding/make adjustment to data resources.
 
 ## Data Resources by Regions
 **For each country, we usually have two levels of data. The data of province/state level is more abundant**
@@ -24,7 +24,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 ### World
 - Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
 - Detailed Patient Data: Not applicable
-- Transmission: Not applicable
+- Transmission: Not applicable. Paid data resource: IATA
 - Social-distancing control: [Oxford Project](http://epidemicforecasting.org/containment) [Google Mobility](https://www.google.com/covid19/mobility/) [School Closure UNESCO](https://data.humdata.org/dataset/global-school-closures-covid19) [Travel Restriction IATA](https://data.humdata.org/dataset/travel-restiction-monitoring-iata-covid-19-iom-dtm)
 - Number of testing: [Our World in Data](https://data.humdata.org/dataset/total-covid-19-tests-performed-by-country)
 - Availability of hospital resources: WHO

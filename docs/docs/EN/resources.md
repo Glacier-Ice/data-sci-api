@@ -32,7 +32,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 
 
 ### China
-Two Levels: Province/City
+Two Levels: Province, City
 - Number of Patients: [Daily](https://github.com/Glacier-Ice/COVID-19-2019-nCoV-Infection-Data-cleaning-), [Hourly](https://github.com/BlankerL/DXY-COVID-19-Data/blob/master/README.en.md)
 - Detailed Patient Data [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
 - Transmission: Baidu Migration Index archieved by [Harvard](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FAEZIO)
@@ -43,7 +43,7 @@ Two Levels: Province/City
 - Others: [News](https://github.com/chinatimeline/chinatimeline.github.io)
 
 ### The United States
-Two Levels: State/County
+Two Levels: State, County
 - Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
 - Detailed Patient Data: [Paper](https://www.nature.com/articles/s41597-020-0448-0) [Data](https://github.com/beoutbreakprepared/nCoV2019/tree/master/latest_data)
 - Transmission: Not applicable
@@ -54,4 +54,4 @@ Two Levels: State/County
 - Others: [News Media](https://github.com/narcisoyu/Institutional-and-news-media-tweet-dataset-for-COVID-19-social-science-research) [Twitters](https://github.com/thepanacealab/covid19_twitter)
 
 ### Europe
-Two Levels: Country/Province
+Two Levels: Country, Province

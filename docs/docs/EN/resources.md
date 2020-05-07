@@ -54,3 +54,11 @@ Two Levels: State, County
 
 ### Europe
 Two Levels: Country, Province
+- Number of Patients: [Covid-19-eu](https://github.com/covid19-eu-zh/covid19-eu-data/tree/master/dataset) 
+- Detailed Patient Data: Not applicable
+- Transmission: Not applicable
+- Social-distancing control: Not applicable
+- Number of testing: Not applicable
+- Availability of hospital resources: Not applicable
+- Demography/Public governance: Not applicable
+- Others: Not applicable

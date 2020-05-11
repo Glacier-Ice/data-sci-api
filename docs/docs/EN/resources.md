@@ -25,7 +25,7 @@ We hope to work under the licence that anyone working with the facilitate of thi
 - Number of Patients: [JHU Data](https://github.com/CSSEGISandData/COVID-19)
 - Detailed Patient Data: Not applicable
 - Transmission: Not applicable. Paid data resource: IATA
-- Social-distancing control: [Oxford Project](http://epidemicforecasting.org/containment), [Google Mobility](https://www.google.com/covid19/mobility/), [School Closure UNESCO](https://data.humdata.org/dataset/global-school-closures-covid19), [Travel Restriction IATA](https://data.humdata.org/dataset/travel-restiction-monitoring-iata-covid-19-iom-dtm)
+- Social-distancing control: [COVID19-Intervention](https://covid19-interventions.com/) [Oxford Project](http://epidemicforecasting.org/containment), [Google Mobility](https://www.google.com/covid19/mobility/), [School Closure UNESCO](https://data.humdata.org/dataset/global-school-closures-covid19), [Travel Restriction IATA](https://data.humdata.org/dataset/travel-restiction-monitoring-iata-covid-19-iom-dtm)
 - Number of testing: [Our World in Data](https://data.humdata.org/dataset/total-covid-19-tests-performed-by-country)
 - Availability of hospital resources: WHO
 - Demography/Public governance: UN, [World Bank](https://data.humdata.org/dataset/world-bank-indicators-of-interest-to-the-covid-19-outbreak)
